@@ -1,5 +1,6 @@
-import React, { ChangeEventHandler, useState, useCallback, MouseEventHandler } from 'react';
+import { ChangeEventHandler, useState, useCallback, MouseEventHandler } from 'react';
 import './App.css';
+import { API_KEY } from './API/apikey';
 import Day from './assets/day.svg';
 import Thunder from './assets/thunder.svg';
 import Night from './assets/night.svg';
@@ -41,7 +42,7 @@ function App() {
   const fetchData = useCallback(async () => {
     try {
       setLoading(true)
-      const API_KEY: string = '02210def14bafd3be5c6539498343c8b';
+      
       const API_LINK: string = `https://api.openweathermap.org/data/2.5/weather?q=${country}&appid=${API_KEY}`;
 
       const resp = await fetch(API_LINK);
