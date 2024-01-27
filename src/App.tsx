@@ -6,6 +6,7 @@ import Night from './assets/night.svg';
 import useWeatherData from './Hooks/useWeatherData';
 import useCountry from './Hooks/useCountry';
 import weatherIcon from './Logic/WeatherIcon';
+import { API_KEY } from './API/apikey';
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -16,7 +17,6 @@ function App() {
   const fetchData = useCallback(async () => {
     try {
       setLoading(true)
-      const API_KEY = '02210def14bafd3be5c6539498343c8b';
       const API_LINK = `https://api.openweathermap.org/data/2.5/weather?q=${country}&appid=${API_KEY}`;
 
       const resp = await fetch(API_LINK);
