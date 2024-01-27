@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # Ignored Files
-src/API/apikey.ts
+# src/API/apikey.ts
